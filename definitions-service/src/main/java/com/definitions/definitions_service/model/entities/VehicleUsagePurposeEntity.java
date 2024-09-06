@@ -1,4 +1,4 @@
-package com.definitions.definitions_service.model;
+package com.definitions.definitions_service.model.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,7 +13,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "vehicle_usage_purposes")
-public class VehicleUsagePurpose {
+public class VehicleUsagePurposeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,5 +24,5 @@ public class VehicleUsagePurpose {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "vehicle_type_id", nullable = false)
-    private VehicleType vehicleTypes;
+    private VehicleTypeEntity vehicleTypes;
 }

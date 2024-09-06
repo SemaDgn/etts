@@ -1,4 +1,4 @@
-package com.definitions.definitions_service.model;
+package com.definitions.definitions_service.model.entities;
 
 import lombok.*;
 
@@ -10,7 +10,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "directorates")
-public class Directorate {
+public class DirectorateEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Short id;

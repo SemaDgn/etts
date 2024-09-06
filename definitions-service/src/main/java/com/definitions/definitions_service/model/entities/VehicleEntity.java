@@ -1,4 +1,4 @@
-package com.definitions.definitions_service.model;
+package com.definitions.definitions_service.model.entities;
 
 import com.definitions.definitions_service.model.enums.VehicleRentalStatuses;
 import lombok.AllArgsConstructor;
@@ -14,7 +14,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "vehicles")
-public class Vehicle {
+public class VehicleEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,15 +25,15 @@ public class Vehicle {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "directorate_id", nullable = false)
-    private Directorate directorate;
+    private DirectorateEntity directorate;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "vehicle_usage_purpose_id", nullable = false)
-    private VehicleUsagePurpose vehicleUsagePurpose;
+    private VehicleUsagePurposeEntity vehicleUsagePurpose;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "fuel_type_id", nullable = false)
-    private FuelType fuelTypes;
+    private FuelTypeEntity fuelTypes;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "rental_status_id", nullable = false)

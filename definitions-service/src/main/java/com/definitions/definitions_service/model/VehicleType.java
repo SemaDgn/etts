@@ -1,4 +1,5 @@
-package com.definitions.definitions_service.model.entities;
+package com.definitions.definitions_service.model;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,18 +8,17 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-
 @Entity
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "fuel_types")
-public class FuelTypeEntity {
+@Table(name = "vehicle_types")
+public class VehicleType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Short id;
 
-    @Column(unique = true, nullable = false, length = 15)
+    @Column(unique = true, nullable = false, length = 50)
     private String type;
 }

@@ -1,23 +1,13 @@
 package com.definitions.definitions_service.service;
 
-import com.definitions.definitions_service.model.Directorate;
-import com.definitions.definitions_service.repository.DiretorateRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.definitions.definitions_service.model.entity.DirectorateEntity;
 
 import java.util.List;
 
-@Service
-public class DirectorateService {
+public interface DirectorateService {
 
-    @Autowired
-    private DiretorateRepository diretorateRepository;
+    public DirectorateEntity saveDirectorate(DirectorateEntity directorate);
 
-    public Directorate createDirectorate(Directorate directorate) {
-        return diretorateRepository.save(directorate);
-    }
+    public List<DirectorateEntity> listDirectorates() ;
 
-    List<Directorate> getAllDirectorates() {
-        return diretorateRepository.findAll();
-    }
 }

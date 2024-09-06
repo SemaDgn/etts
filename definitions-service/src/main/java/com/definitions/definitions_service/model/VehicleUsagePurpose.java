@@ -1,0 +1,28 @@
+package com.definitions.definitions_service.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+
+@Entity
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "vehicle_usage_purposes")
+public class VehicleUsagePurpose {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column(name = "usage_purpose", unique = true, nullable = false)
+    private String usagePurpose;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "vehicle_type_id", nullable = false)
+    private VehicleType vehicleTypes;
+}

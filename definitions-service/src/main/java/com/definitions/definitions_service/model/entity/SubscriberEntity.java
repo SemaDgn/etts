@@ -28,6 +28,6 @@ public class SubscriberEntity {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="directorate_id")
-    private Directorate directorate;
+    private DirectorateEntity directorate;
 
 }

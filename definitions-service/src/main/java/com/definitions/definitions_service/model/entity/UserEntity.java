@@ -41,5 +41,5 @@ public class UserEntity {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "directorate_id")
-    private Directorate directorate;
+    private DirectorateEntity directorate;
 }

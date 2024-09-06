@@ -10,7 +10,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "directorates")
-public class DirectorateEntity {
+public class Directorate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

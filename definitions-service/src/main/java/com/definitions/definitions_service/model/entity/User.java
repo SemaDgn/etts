@@ -12,34 +12,33 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "users")
-public class UserEntity {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column( nullable = false, length = 50)
+    @Column(name = "first_name", nullable = false, length = 50)
     private String firstName;
 
-    @Column( nullable = false, length = 50)
+    @Column(name = "last_name", nullable = false, length = 50)
     private String lastName;
 
-    @Column( nullable = false, length = 50)
+    @Column(name = "l_dap_user", nullable = false, length = 50)
     private String lDapUser;
 
-    @Column( nullable = false)
-    private boolean isManager;
-
-    @Column( nullable = false)
+    @Column(name = "is_manager", nullable = false)
+    private Boolean isManager;
+    @Column(name = "manager_id", nullable = false)
     private Long managerId;
 
-    @Column( nullable = false)
+    @Column(nullable = false)
     private boolean isActive;
 
-    @Column( name = "see_allusers",nullable = false)
-    private  boolean  seeAllUsers;
+    @Column(name = "can_view_all_users", nullable = false)
+    private  boolean  canViewAllUsers;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "directorate_id")
-    private DirectorateEntity directorate;
+    private Directorate directorate;
 }

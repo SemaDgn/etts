@@ -1,5 +1,6 @@
 package com.definitions.definitions_service.model.entity;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,17 +13,12 @@ import javax.persistence.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "vehicle_usage_purposes")
-public class VehicleUsagePurposeEntity {
-
+@Table(name = "vehicle_types")
+public class VehicleType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "usage_purpose", unique = true, nullable = false)
-    private String usagePurpose;
-
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "vehicle_type_id", nullable = false)
-    private VehicleTypeEntity vehicleTypes;
+    @Column(unique = true, nullable = false, length = 50)
+    private String type;
 }

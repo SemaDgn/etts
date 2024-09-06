@@ -1,6 +1,6 @@
 package com.definitions.definitions_service.service.impl;
 
-import com.definitions.definitions_service.model.entity.FuelTypeEntity;
+import com.definitions.definitions_service.model.entity.FuelType;
 import com.definitions.definitions_service.repository.FuelTypeRepository;
 import com.definitions.definitions_service.service.FuelTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,11 +15,11 @@ public class FuelTypeServiceImpl implements FuelTypeService{
     private FuelTypeRepository fuelTypeRepository;
 
     @Override
-    public FuelTypeEntity saveFuelType(FuelTypeEntity fuelType){
+    public FuelType saveFuelType(FuelType fuelType){
         return fuelTypeRepository.save(fuelType);
     }
     @Override
-    public List<FuelTypeEntity> listFuelTypes(){
+    public List<FuelType> listFuelTypes(){
         return fuelTypeRepository.findAll();
     }
 }

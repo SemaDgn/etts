@@ -1,13 +1,13 @@
 package com.definitions.definitions_service.service;
 
-import com.definitions.definitions_service.model.entity.DirectorateEntity;
+import com.definitions.definitions_service.model.entity.Directorate;
 
 import java.util.List;
 
 public interface DirectorateService {
 
-    public DirectorateEntity saveDirectorate(DirectorateEntity directorate);
+    public Directorate saveDirectorate(Directorate directorate);
 
-    public List<DirectorateEntity> listDirectorates() ;
+    public List<Directorate> listDirectorates() ;
 
 }

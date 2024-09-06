@@ -1,6 +1,6 @@
 package com.definitions.definitions_service.service.impl;
 
-import com.definitions.definitions_service.model.entity.DirectorateEntity;
+import com.definitions.definitions_service.model.entity.Directorate;
 import com.definitions.definitions_service.repository.DiretorateRepository;
 import com.definitions.definitions_service.service.DirectorateService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,12 +15,12 @@ public class DirectorateServiceImpl implements DirectorateService {
     private DiretorateRepository diretorateRepository;
 
     @Override
-    public DirectorateEntity saveDirectorate(DirectorateEntity directorate) {
+    public Directorate saveDirectorate(Directorate directorate) {
         return diretorateRepository.save(directorate);
     }
 
     @Override
-    public List<DirectorateEntity> listDirectorates() {
+    public List<Directorate> listDirectorates() {
         return diretorateRepository.findAll();
     }
 }

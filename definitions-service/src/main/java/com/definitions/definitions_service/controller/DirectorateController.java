@@ -1,6 +1,6 @@
 package com.definitions.definitions_service.controller;
 
-import com.definitions.definitions_service.model.entity.DirectorateEntity;
+import com.definitions.definitions_service.model.entity.Directorate;
 import com.definitions.definitions_service.service.DirectorateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,12 +17,12 @@ public class DirectorateController {
     private DirectorateService directorateService;
 
     @PostMapping(path = "/api/Directorates" )
-    public DirectorateEntity createDirectorate(@RequestBody DirectorateEntity directorate){
+    public Directorate createDirectorate(@RequestBody Directorate directorate){
         return directorateService.saveDirectorate(directorate);
     }
 
     @GetMapping(path = "/api/Directorates")
-    public List<DirectorateEntity> getAllDirectorates(){
+    public List<Directorate> getAllDirectorates(){
         return directorateService.listDirectorates();
     }
 

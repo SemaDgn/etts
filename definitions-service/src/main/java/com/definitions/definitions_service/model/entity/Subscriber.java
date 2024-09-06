@@ -12,22 +12,22 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "subscribers")
-public class SubscriberEntity {
+public class Subscriber {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "subscriner_no",unique = true, nullable = false)
-    private String subscrinerNo;
+    @Column(name = "subscriber_number", unique = true, nullable = false)
+    private String subscriberNumber;
 
-    @Column( nullable = false)
+    @Column(nullable = false)
     private String business;
 
-    @Column( nullable = false)
+    @Column(nullable = false)
     private String address;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="directorate_id")
-    private DirectorateEntity directorate;
+    private Directorate directorate;
 
 }
